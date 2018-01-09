@@ -6,7 +6,7 @@ const parameters = {
   q: 'Buhari Atiku',
   lang: 'en',
   result_type: 'mixed',
-  count: 10
+  count: 50
 
 }
 
