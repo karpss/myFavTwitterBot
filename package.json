@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "node-cron": "^1.2.1",
     "twitter": "^1.7.1"
   }
 }

@@ -6,7 +6,7 @@ const parameters = {
   q: 'Buhari Atiku',
   lang: 'en',
   result_type: 'mixed',
-  count: 3
+  count: 50
 
 }
 
@@ -29,3 +29,5 @@ client.get('search/tweets', parameters, (err, data) => {
     console.log(err)
   }
 })
+
+
