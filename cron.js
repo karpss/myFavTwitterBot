@@ -4,7 +4,7 @@
 const cron = require('node-cron')
 
 //exceute every 3 hours
-cron.schedule('* * /3 * * *', function(){
+cron.schedule('* * 3 * * *', function(){
   const shell = require('./child_helper');
 
   const commandList = [
