@@ -1,6 +1,7 @@
 const Twitter = require('twitter')
 const config = require('./config')
 const client = new Twitter(config)
+const util = require('util')
 
 const parameters = {
   q: 'Buhari Atiku',
@@ -9,9 +10,10 @@ const parameters = {
   count: 50
 
 }
+let get = util.promisify(client.get).bind(client)
+get('search/tweets', parameters,)
+  .then((data) => {
 
-client.get('search/tweets', parameters, (err, data) => {
-  if (!err) {
     for (let i = 0; i < data.statuses.length; i++) {
       let tweet_id = {id: data.statuses[i].id_str}
       client.post('favorites/create', tweet_id, (err, response) => {
@@ -25,9 +27,12 @@ client.get('search/tweets', parameters, (err, data) => {
         }
       })
     }
-  } else {
-    console.log(err)
-  }
-})
+
+  })
+  .catch((err) => {
+    console.log('Error', err)
+  })
+
+
 
 
